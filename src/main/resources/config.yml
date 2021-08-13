@@ -1,0 +1,8 @@
+config-version: 1
+
+worlds: # Có thể add bao nhiêu world tuỳ thích.
+  spawn2:
+    y-trigger: 5
+    permission: 'void.enable'
+    # Công thức destination: 'tên world,x,y,z,pitch,yaw'
+    destination: 'spawn2,0.5,114,0.5,0.0,90.0'

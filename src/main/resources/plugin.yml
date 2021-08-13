@@ -1,0 +1,8 @@
+name: VoidSafe
+version: ${project.version}
+main: vn.vinhgaming.voidsafe.VoidSafe
+api-version: 1.13
+commands:
+  voidsafe:
+    aliases:
+      - vsafe
