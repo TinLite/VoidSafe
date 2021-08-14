@@ -16,11 +16,13 @@ public class EventListener implements Listener {
             return;
         Player player = event.getPlayer();
         ConfigurationSection worldConfig = ConfigManager.getWorldConfig(event.getPlayer().getWorld().getName());
-        if (!player.hasPermission(worldConfig.getString("permission", "voidsafe.activeall")) && !player.hasPermission("voidsafe.activeall"))
-            return;
-        Location playerLocation = player.getLocation();
-        if (playerLocation.getY() <= worldConfig.getDouble("y-trigger"))
-            // just in case
-            player.teleport(ConfigManager.getDestination(playerLocation.getWorld().getName()), PlayerTeleportEvent.TeleportCause.PLUGIN);
+        if (player.hasPermission("voidsafe.activeall")
+                || !worldConfig.getKeys(false).contains("permission") // idk cái doc quả contains trực tiếp đọc thấy sai sai
+                || player.hasPermission(worldConfig.getString("permission", "voidsafe.activeall"))) {
+            Location playerLocation = player.getLocation();
+            if (playerLocation.getY() <= worldConfig.getDouble("y-trigger"))
+                // just in case
+                player.teleport(ConfigManager.getDestination(playerLocation.getWorld().getName()), PlayerTeleportEvent.TeleportCause.PLUGIN);
+        }
     }
 }

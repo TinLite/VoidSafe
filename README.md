@@ -30,6 +30,8 @@ worlds: # Có thể add bao nhiêu world tuỳ thích.
     destination: 'spawn2,0.5,114,0.5,0.0,90.0' # Required. Công thức destination: 'tên world,x,y,z,pitch,yaw'
 ```
 
+> **Lưu ý**: Nếu không có trường `permission`, trigger sẽ mặc định toàn bộ mọi người đều có đúng perm yêu cầu và sẽ teleport tất cả mọi người.
+
 ## Commands
 
 |Lệnh|Permission để dùng|Miêu tả|
